@@ -11,7 +11,6 @@ public with sharing class LeadFollowUpBatch implements Database.Batchable<SObjec
             SELECT Id, OwnerId
             FROM Lead
             WHERE IsConverted = false
-            AND IsClosed = false
             AND CreatedDate <= :cutoffDate
         ]);
     }
